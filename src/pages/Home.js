@@ -27,12 +27,27 @@ class Home extends Component {
       todos: new_list,
     });
   };
+  deleteTodo = (id) => {
+    const todos = this.state.todos.filter((todo) => {
+      return todo.id !== id;
+    });
+    this.setState({
+      todos: todos,
+    });
+    if (item exists in todo list) {
+      do nothing and just return
+      to break out the function
+  } else {
+      perform the action to add
+      the item to the Todo list }
+};
   render() {
     return (
       <div className="Home">
         <h1>Todo's </h1>
         <Todos todos={this.state.todos}/>
         <AddTodo addTodo={this.addTodo}/>
+        <deleteTodo={this.deleteTodo}/>
       </div>
     );
   }
